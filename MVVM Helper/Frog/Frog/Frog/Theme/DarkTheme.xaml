@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frog.Theme.DarkTheme"
+             >
+
+    <Color x:Key="AccentColor">#FFDA125F</Color>
+    <Color x:Key="BaseTextColor">#FFFFFF</Color>
+    <Color x:Key="ListViewSelectedItemBacgroundColor">#44DA125F</Color>
+    <Color x:Key="SplashBackgroundColor">#525ABB</Color>
+    <Color x:Key="CustomNavBarTextColor">#FFFFFF</Color>
+    <Color x:Key="ListViewItemTextColor">#FFFF</Color>
+
+    <Color x:Key="MainMenuHeaderBackgroundColor">Transparent</Color>
+    <Color x:Key="MainMenuBackgroundColor">#1B1F2A</Color>
+    <Color x:Key="MainMenuSeparatorColor">Transparent</Color>
+    <Color x:Key="MainMenuTextColor">#FFFFFF</Color>
+    <Color x:Key="MainMenuIconColor">#FFFFFF</Color>
+    <Color x:Key="BasePageColor">#1B1F2A</Color>
+</ResourceDictionary>

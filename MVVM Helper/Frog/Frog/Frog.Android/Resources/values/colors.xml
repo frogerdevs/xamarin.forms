@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="AccentColor">#FFDA125F</color>
+  <color name="ComplementColor">#FF525ABB</color>
+  <color name="BaseTextColor">#FF666666</color>
+  <color name="ListViewSelectedItemBackgroundColor">#44DA125F</color>
+  <color name="SplashBackgroundColor">#FF525ABB</color>
+</resources>

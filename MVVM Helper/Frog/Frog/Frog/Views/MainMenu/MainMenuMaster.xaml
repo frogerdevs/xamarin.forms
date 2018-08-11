@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frog.Views.MainMenu.MainMenuMaster"
+             Title="Master">
+    <StackLayout>
+        <ListView x:Name="MenuItemsListView" ItemTapped="MenuItemsListView_OnItemTapped"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}"
+              Style="{StaticResource MainMenuListViewStyle}">
+            <ListView.Header>
+                <Grid HeightRequest="100" BackgroundColor="#03A9F4" Padding="0">
+                    <Image Source="custom_nav_bg.jpg" 
+                     IsOpaque="false" Aspect="AspectFill" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Forger" Style="{StaticResource MainMenuLabelHeader}"></Label>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="24,10" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Icon}" HorizontalOptions="Start"
+                           VerticalOptions="Center" Grid.Column="0"
+                           Style="{StaticResource MainMenuIconStyle}"></Label>
+
+                                <Label VerticalOptions="FillAndExpand" Grid.Column="1"
+                           VerticalTextAlignment="Center" 
+                           Text="{Binding Text}" 
+                           Style="{StaticResource MainMenuLabelItem}"
+                           Margin="10"/>
+                            </Grid>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

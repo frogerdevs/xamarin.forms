@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Frog.Views.User.UserView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             BackgroundColor="{DynamicResource BasePageColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="BtnAdd" Text="Add" Command="{Binding AddCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView x:Name="ListUser" ItemsSource="{Binding Users}"
+                  SeparatorColor="{DynamicResource BaseTextColor}"
+                  ItemTapped="ListUser_OnItemTapped"
+                  RowHeight="60" SeparatorVisibility="Default">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem x:Name="MenuDelete" Clicked="MenuDelete_OnClicked" 
+                                      CommandParameter="{Binding .}"
+                                      Text="Delete" IsDestructive="True"></MenuItem>
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <controls:CircleImage Grid.Column="0"
+                                                      Source="{Binding Image}"
+                                                      Aspect="AspectFill"
+                                                      BorderColor="Accent"
+                                                      HorizontalOptions="Center"
+                                                      BorderThickness="2"
+                                                      HeightRequest="50"
+                                                      WidthRequest="50">
+                                    
+                                </controls:CircleImage>
+                                <Label Grid.Column="1" Text="{Binding UserName}"
+                                       TextColor="{DynamicResource BaseTextColor}"
+                                       FontSize="16" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

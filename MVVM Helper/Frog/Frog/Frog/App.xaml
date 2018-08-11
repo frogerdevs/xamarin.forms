@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:theme="clr-namespace:Frog.Theme;assembly=Frog"
+             x:Class="Frog.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+
+        <ResourceDictionary MergedWith="theme:LightTheme">
+
+            <OnPlatform x:Key="IconFontFamily" x:TypeArguments="x:String">
+                <On Platform="Android">fontawesome-webfont.ttf#fontawesome-webfont</On>
+                <On Platform="IOS">fontawesome-webfont</On>
+                <On Platform="UWP">fontawesome-webfont.ttf</On>
+            </OnPlatform>
+
+            <Style x:Key="MainMenuListViewStyle" TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BasePageColor}"/>
+                <Setter Property="SeparatorColor" Value="{DynamicResource BaseTextColor}"/>
+                <Setter Property="SeparatorVisibility" Value="None"/>
+                <Setter Property="RowHeight" Value="55"/>
+            </Style>
+            <Style x:Key="MainMenuLabelItem" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource BaseTextColor}"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="LineBreakMode" Value="TailTruncation"/>
+            </Style>
+            <Style x:Key="MainMenuLabelHeader" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource CustomNavBarTextColor}"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+            <Style x:Key="MainMenuIconStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource MainMenuIconColor}"/>
+                <Setter Property="FontFamily" Value="{StaticResource IconFontFamily}"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
